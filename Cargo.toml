@@ -1,0 +1,20 @@
+[package]
+name = "playground-3d"
+version = "0.1.0"
+edition = "2021"
+description = "A desktop 3D gem-collector game built with Rust + Bevy"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+bevy = "0.20"
+
+# Faster debug iteration for a heavy engine dependency (per Bevy docs).
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+codegen-units = 1
+lto = "thin"

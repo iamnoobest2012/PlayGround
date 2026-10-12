@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playground 3D — Rust Gem Collector</title>
+  
+<script type="module">
+import init, * as bindings from '/playground-3d-a6b191aedc088d66.js';
+const wasm = await init({ module_or_path: '/playground-3d-a6b191aedc088d66_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #0b0e14;
+      overflow: hidden;
+    }
+    #bevy {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+  </style>
+<link rel="modulepreload" href="/playground-3d-a6b191aedc088d66.js" crossorigin="anonymous" integrity="sha384-8kaNKFnL2E3JomBjc7Q5wsTy0uHTArnYikEKGRwQtQEzXFEvokoFhIGCC+M3UCxo"><link rel="preload" href="/playground-3d-a6b191aedc088d66_bg.wasm" crossorigin="anonymous" integrity="sha384-nFIfxiwgnRcpSENgK0OnU6H7n/9JpJs3h0E6Vkxq4JF+8KKxoZuALOok8amZ4UUQ" as="fetch" type="application/wasm"></head>
+<body>
+  <canvas id="bevy"></canvas>
+</body>
+</html>

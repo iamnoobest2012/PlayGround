@@ -1,0 +1,4 @@
+# Trunk builds the browser (WASM) version of the game into dist/.
+[build]
+target = "index.html"
+dist = "dist"
